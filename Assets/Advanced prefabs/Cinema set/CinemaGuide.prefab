@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3547837756666632363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6028346476060313354}
+  - component: {fileID: 7097237523431321352}
+  - component: {fileID: 3091638122305209340}
+  m_Layer: 0
+  m_Name: CinemaGuide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6028346476060313354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547837756666632363}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -16.3, y: 5.9, z: 37.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7097237523431321352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547837756666632363}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 750847c9ee574c5438c0abe7407d43cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ccf: {fileID: 0}
+  cam: {fileID: 0}
+  camManager: {fileID: 0}
+  isObject: 1
+  nextTarget: {fileID: 0}
+  nextPos: {x: 0, y: 0, z: 0}
+  offset: {x: 3.56, y: 0, z: 0}
+  lookIsObject: 1
+  lookAt: 1
+  lookTarget: {fileID: 0}
+  lookPos: {x: 0, y: 0, z: 0}
+  startSpeed: 0.24
+  endSpeed: 0.65
+  ease: 
+  chainJob: 1
+  stayTime: 3
+  triggered: 1
+  triggeredBefore: 1
+  lookAtBefore: 1
+  lookAtBeforeIsObject: 1
+  lookAtBeforePos: {x: 0, y: 0, z: 0}
+  lookAtBeforeObj: {fileID: 0}
+  startSpeedBefore: 1
+  endSpeedBefore: 1.17
+  easeBefore: EaseInOut
+  switchNow: 0
+  delay: 2.21
+  boxColliderSize: {x: 1, y: 1, z: 1}
+--- !u!65 &3091638122305209340
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3547837756666632363}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
