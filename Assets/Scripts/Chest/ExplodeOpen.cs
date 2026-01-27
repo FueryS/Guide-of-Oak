@@ -13,6 +13,7 @@ public class ExplodeOpen : MonoBehaviour
     #region effects
     public ParticleSystem playParticle;
     public float waitTime;
+    public string nextScene;
     #endregion
 
     #region Inspector
@@ -34,6 +35,7 @@ public class ExplodeOpen : MonoBehaviour
         if (m_IPU == null)
             return;
 
+        // If interaction completed, trigger explosion and destoy the "E" canvas
         if (m_IPU.interacted)
         {
             Explode();
@@ -75,6 +77,22 @@ public class ExplodeOpen : MonoBehaviour
     {
         yield return new WaitForSeconds(waitTime);
         playParticle.Play();
+        
+        //set the next scene value
+        setNextSceneValue();
+
+        //wait for particle to finish
+        yield return new WaitForSeconds(playParticle.main.duration);
+
+        GameLoader.Instance.LoadNextScene();
+    }
+
+
+    // this will set the next scene value
+    void setNextSceneValue()
+    {
+        GameLoader.nextScene = nextScene;
     }
     #endregion
+
 }

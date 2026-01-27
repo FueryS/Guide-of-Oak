@@ -4,7 +4,13 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Shaders/DeleteLater/ShaderLearn.unity
+    guid: 1e1862af82a8671458c399eaaa2b00b4
+  - enabled: 1
+    path: Assets/Scenes/FInalTestBasics.unity
+    guid: 16ea7972b2bc3a4478e86450fe28df3a
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
   m_UseUCBPForAssetBundles: 0

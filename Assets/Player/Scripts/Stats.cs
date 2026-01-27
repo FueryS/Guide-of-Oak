@@ -45,7 +45,7 @@ public class Stats : MonoBehaviour
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameLoader.Instance.ReloadScene();
     }
 
     public void Damage(float d)

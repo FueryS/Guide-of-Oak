@@ -3173,6 +3173,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3536922600165004174, guid: a35e11257198e1643b9289745cf66022, type: 3}
   m_PrefabInstance: {fileID: 347182656}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &833820583
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 942786764}
+    m_Modifications:
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 25.297401
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.528875
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2846
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4732586390658582069, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+      propertyPath: m_Name
+      value: GameLoader
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
 --- !u!1001 &845602528
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3832,6 +3889,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1253403765}
   - {fileID: 1496092127}
   - {fileID: 1673959244}
   m_Father: {fileID: 0}
@@ -5028,6 +5086,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6321914049495859693, guid: 7ed7916b6e4dc564caa069b876def0f3, type: 3}
   m_PrefabInstance: {fileID: 701837386}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1253403765 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1674615363429463864, guid: b5fff6de403e14d46abf66e6c2305d9b, type: 3}
+  m_PrefabInstance: {fileID: 833820583}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1264414830
 PrefabInstance:
@@ -7479,6 +7542,14 @@ PrefabInstance:
     - target: {fileID: 4004455803718186445, guid: 9567e11a14f713e46a75dd04f93e1aa4, type: 3}
       propertyPath: m_Name
       value: CommonChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 6771956027671464077, guid: 9567e11a14f713e46a75dd04f93e1aa4, type: 3}
+      propertyPath: interactionDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6913990986811052700, guid: 9567e11a14f713e46a75dd04f93e1aa4, type: 3}
+      propertyPath: nextScene
+      value: ShaderLearn
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
