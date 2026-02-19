@@ -19,7 +19,7 @@ public class AudioPackPlayer : MonoBehaviour
         _AM = GameObject.FindGameObjectWithTag("SFX").GetComponent<AudioManager>();
         controller = GetComponent<CharacterController>();
         _PM = GetComponent<PlayerMovement>();
-        if (_AM == null) Debug.Log("KYS");
+        if (_AM == null) Debug.Log("_AM is null");
     }
 
     private void Update()

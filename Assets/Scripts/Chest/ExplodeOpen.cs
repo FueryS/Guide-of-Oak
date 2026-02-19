@@ -92,6 +92,7 @@ public class ExplodeOpen : MonoBehaviour
     void setNextSceneValue()
     {
         GameLoader.nextScene = nextScene;
+        SoftSpawnManager.Instance_SoftSpawnManager.hasSavedPosition = false; //reset the saved position for the next scene
     }
     #endregion
 

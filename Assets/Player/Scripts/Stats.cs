@@ -14,7 +14,7 @@ public class Stats : MonoBehaviour
     [SerializeField] float _iframeTime = 0.5f;
 
     bool _iframe= false;
-
+    bool _isDead = false;
 
     private void Awake()
     {
@@ -32,9 +32,13 @@ public class Stats : MonoBehaviour
         _health = HP;
     }
 
+
+    
     public void DeathEvent()
     {
-        // Disable ALL skinned mesh renderers in the player hierarchy
+        if (_isDead) return; // If we're already dying, don't die again!
+        _isDead = true;
+
         foreach (var smr in GetComponentsInChildren<SkinnedMeshRenderer>())
         {
             smr.enabled = false;
@@ -50,6 +54,14 @@ public class Stats : MonoBehaviour
 
     public void Damage(float d)
     {
+        if (_iframe) return;
+        this._health -= d;
+        if (_health < 1) DeathEvent();
+        StartCoroutine("Iframe");
+    }
+    public void Damage(float d, bool ignoreIframe)
+    {
+        _iframe = !ignoreIframe;
         if (_iframe) return;
         this._health -= d;
         if (_health < 1) DeathEvent();
@@ -103,7 +115,8 @@ public class Stats : MonoBehaviour
     public float GetHp()
     {
         return this._health;
-    }public float GetHealth()
+    }
+    public float GetHealth()
     {
         return this._health;
     }

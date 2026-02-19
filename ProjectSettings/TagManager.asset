@@ -9,6 +9,8 @@ TagManager:
   - Damaging
   - Cinema
   - SFX
+  - SoftSpawn
+  - Manager
   layers:
   - Default
   - TransparentFX

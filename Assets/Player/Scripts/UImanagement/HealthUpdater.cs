@@ -6,9 +6,14 @@ using UnityEngine.UI;
 
 public class HealthUpdater : MonoBehaviour
 {
-    [SerializeField] Stats m_stats;
+
     [SerializeField] Slider m_health;
     [SerializeField] Slider m_lerp;
+
+    [Header("Player Stats")]
+    [SerializeField] Stats m_stats;
+    public string targetName = "Player";
+    public string targetTag = "Player";
 
     [ContextMenuItem("Load Health", "GetMaxHP")]
     float _maxHP;
@@ -31,9 +36,19 @@ public class HealthUpdater : MonoBehaviour
             m_lerp = s[0];
             if (m_stats == null)
             {
-                Debug.LogWarning("<color = #ffffff>[HealthUpdater]</color> value of m_stats is null");
-                this.enabled = false;
-            }
+                GameObject foundObj = GameObject.Find(targetName);
+
+                // Verify if the tag matches to ensure it's the right object
+                if (foundObj != null && foundObj.CompareTag(targetTag))
+                {
+                    m_stats = foundObj.GetComponent<Stats>();
+                }
+                else
+                {
+                    Debug.LogWarning($"Target '{targetName}' with tag '{targetTag}' not found in scene.");
+                }
+            
+        }
         }
     }
 
