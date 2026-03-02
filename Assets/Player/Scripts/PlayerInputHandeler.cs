@@ -1,4 +1,4 @@
-using System;
+    using System;
 using UnityEngine;
 
 public class PlayerInputHandler : MonoBehaviour
@@ -48,7 +48,7 @@ public class PlayerInputHandler : MonoBehaviour
         //Slide event
         controls.Player.Sprint.started += ctx=> OnSlidePressed?.Invoke();
 
-        // Jump Events
+        // JumpPressed Events
         controls.Player.Jump.started += ctx => OnJumpPressed?.Invoke();
         controls.Player.Jump.canceled += ctx => OnJumpReleased?.Invoke();
 

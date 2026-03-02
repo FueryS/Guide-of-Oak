@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     public float resistance = 1;
 
-    [Header("Jump Settings")]
+    [Header("JumpPressed Settings")]
     // Replaced "Charge" settings with "Variable Height" settings
     [SerializeField] private float maxJumpHeight = 3f; // Height reached if button is HELD
     [SerializeField] private float wallJumpHeight = 2.5f; // Height for the wall/ledge jump
@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     public bool doWallRun=false;
     public float wr_friction=1;
     // This variable tracks if the player is physically holding the jump button
-    // We need this for the "Variable Jump Height" logic (Hollow Knight style)
+    // We need this for the "Variable JumpPressed Height" logic (Hollow Knight style)
     private bool isJumpHeld = false;
 
     [Header("Exposed variables")]
@@ -168,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
         if (debugMoves) Debug.Log("move:" + move);
     }
 
-    // ----------------- Jump Handling -----------------
+    // ----------------- JumpPressed Handling -----------------
 
     // New function to house the requested SphereCast logic
     private void UpdateWallContactSphereCast()
@@ -210,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
 
         // Logic: If we are in the air (!isGrounded), touching a wall (hitWall), 
         // BUT the parkour script says it's NOT a climbable ledge (!pr.ledgeDetect())...
-        // Then perform a Wall Jump.
+        // Then perform a Wall JumpPressed.
         if (!isGrounded && hitWall && !pr.LedgeDetect())
         {
             PerformJump(wallJumpHeight);
@@ -262,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
         if (velocity.y > 0 && !isJumpHeld)
         {
             // Apply MUCH heavier gravity (3x) to cut the jump arc short.
-            // This creates the "Short Hop" vs "Long Jump" feel.
+            // This creates the "Short Hop" vs "Long JumpPressed" feel.
             velocity.y += (l_gravity * 3f) * Time.deltaTime;
         }
         else

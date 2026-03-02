@@ -530,6 +530,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3402547655320349111, guid: 32b691c5058a23942bb88f27c909e750, type: 3}
+      propertyPath: SpawnManagerName
+      value: SpawnManager
+      objectReference: {fileID: 0}
     - target: {fileID: 5293723884196738817, guid: 32b691c5058a23942bb88f27c909e750, type: 3}
       propertyPath: m_Name
       value: SoftSpawnPoint (1)
@@ -1356,6 +1360,22 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2233535336275705134, guid: a35e11257198e1643b9289745cf66022, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233535336275705134, guid: a35e11257198e1643b9289745cf66022, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233535336275705134, guid: a35e11257198e1643b9289745cf66022, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2233535336275705134, guid: a35e11257198e1643b9289745cf66022, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5462150535148625613, guid: a35e11257198e1643b9289745cf66022, type: 3}
       propertyPath: sensitivity
       value: 0.205
@@ -1411,10 +1431,6 @@ PrefabInstance:
     - target: {fileID: 7873744417294058796, guid: a35e11257198e1643b9289745cf66022, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8440683480781748639, guid: a35e11257198e1643b9289745cf66022, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3816,6 +3832,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 7760271915477069255, guid: 26bafba7e6e8e9542a074a3e663e93c1, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8211060123133125595, guid: 26bafba7e6e8e9542a074a3e663e93c1, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -4442,6 +4462,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueHell
       objectReference: {fileID: 0}
+    - target: {fileID: 7969639895442545077, guid: 7c06d7804dd07794a9c624c069e8c138, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 8527557493195368661, guid: 7c06d7804dd07794a9c624c069e8c138, type: 3}
       propertyPath: Player
       value: 
@@ -4503,6 +4527,10 @@ PrefabInstance:
     - target: {fileID: 1208329038401701823, guid: 32b691c5058a23942bb88f27c909e750, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402547655320349111, guid: 32b691c5058a23942bb88f27c909e750, type: 3}
+      propertyPath: SpawnManagerName
+      value: SpawnManager
       objectReference: {fileID: 0}
     - target: {fileID: 5293723884196738817, guid: 32b691c5058a23942bb88f27c909e750, type: 3}
       propertyPath: m_Name

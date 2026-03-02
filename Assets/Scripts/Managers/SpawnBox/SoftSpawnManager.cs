@@ -51,11 +51,10 @@ public class SoftSpawnManager : MonoBehaviour
             {
                 // Diable CharacterController before moving the player to avoid physics issues, then re-enable it after.
                 CharacterController cc = player.GetComponent<CharacterController>();
-                if (cc != null)
-                {
+
                     cc.enabled = false;
                     Debug.Log($"<color=green> Character controller Disabled </color>");
-                }
+
 
                 player.transform.position = savedSpawnPosition;
 

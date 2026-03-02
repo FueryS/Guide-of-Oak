@@ -19,7 +19,7 @@ public class PlayerMover : MonoBehaviour
     public float runSpeed = 10;
     public float strafeSpeed = 4;
 
-    [Header("Jump Settings")]
+    [Header("JumpPressed Settings")]
     public float maxJumpCount = 2;
     public float jumpSpeed;
 
@@ -90,7 +90,7 @@ public class PlayerMover : MonoBehaviour
         {
             if (_jumpCount < maxJumpCount)
             {
-                Debug.Log("Jump Performed: " + _jumpCount);
+                Debug.Log("JumpPressed Performed: " + _jumpCount);
                 m_applier.appliedGravity = jumpSpeed;
                 _jumpCount++;
             }
