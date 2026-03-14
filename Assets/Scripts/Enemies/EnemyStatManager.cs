@@ -14,8 +14,8 @@ public class EnemyStatManager : MonoBehaviour
     #region Testing
     Renderer _renderer;
 
-    Color startColor = Color.red;
-    Color endColor = Color.black;
+    public Color startColor = Color.red;
+    public Color endColor = Color.black;
     Color iFrameColor = Color.white;
 
     float _lerpValue;

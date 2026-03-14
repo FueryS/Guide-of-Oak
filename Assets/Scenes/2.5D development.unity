@@ -1511,6 +1511,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 1638140104964730593, guid: da12ae38da697ae4cb851d827022ecc9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6104077150902233095, guid: da12ae38da697ae4cb851d827022ecc9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -19,6 +19,7 @@ public class PlayerIdleState : PlayerBaseState
         player.inputHandler.OnJumpPressed += OnJumpPressed;
         player.inputHandler.OnDashPressed += OnDashPressed;
         player.inputHandler.OnAttackPressed += OnAttackPressed;
+        player.inputHandler.OnInteractPressed += OnParryPressed;
 
     }
 
@@ -41,6 +42,7 @@ public class PlayerIdleState : PlayerBaseState
         player.inputHandler.OnJumpPressed -= OnJumpPressed;
         player.inputHandler.OnDashPressed -= OnDashPressed;
         player.inputHandler.OnAttackPressed -= OnAttackPressed;
+        player.inputHandler.OnInteractPressed -= OnParryPressed;
 
     }
 
@@ -52,6 +54,11 @@ public class PlayerIdleState : PlayerBaseState
     void OnDashPressed()
     {
         playerRef.SwitchState(playerRef.dodgeState);
+    }
+
+    void OnParryPressed()
+    {
+        playerRef.SwitchState(playerRef.parryState);
     }
     void OnAttackPressed()
     {
