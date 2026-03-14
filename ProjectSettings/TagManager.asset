@@ -11,6 +11,7 @@ TagManager:
   - SFX
   - SoftSpawn
   - Manager
+  - Player UI
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - UI
   - Walkable
   - Slope
-  - 
-  - 
+  - IsEnemy
+  - IsPlayer
   - 
   - 
   - 

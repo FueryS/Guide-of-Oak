@@ -7,6 +7,10 @@ public class PlayerDodgeState : PlayerBaseState
     public float dashSpeed=20;
     public float dashCooldown=1f;
 
+    //SFX
+    public AudioClip[] dashSFX;
+    public AudioSource audioSource;
+
     public bool canDash = true;
 
     PlayerStateManager playerRef;
@@ -22,6 +26,7 @@ public class PlayerDodgeState : PlayerBaseState
         player.StartCoroutine(DashCooldown());
         playerRef = player;
         player.StartCoroutine(DashStart());
+        PlayDash();
 
     }
 
@@ -57,5 +62,26 @@ public class PlayerDodgeState : PlayerBaseState
     public override void ExitState(PlayerStateManager player)
     {
         
+    }
+
+    void PlayDash()
+    {
+        audioSource.clip = dashSFX[Random.Range(0, dashSFX.Length)];
+        audioSource.Play();
+        Debug.Log("Played dash sound");
+    }
+
+    public void ValueAssigner(AudioSource source, 
+        AudioClip[] clips,
+        float dashTime,
+        float dashSpeed,
+        float dashCooldown
+        )
+    {
+        audioSource = source;
+        dashSFX = clips;
+        this.dashTime = dashTime;
+        this.dashSpeed = dashSpeed;
+        this.dashCooldown = dashCooldown;
     }
 }

@@ -1,40 +1,81 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AnimationEvents : MonoBehaviour
 {
-    public float rotationFactor = 180f;
-    public float xPlanePosition = 0f;
+    GameObject attachHitbox; //Used for attack related stuff
 
-    Transform _playerTransformChache;
+    [Header("Audio Source")]
+    public AudioSource audioSource;
+    public AudioSource SwardSource;
+
+    [Header("Audio Resources")]
+    public AudioResource footStepResource;
+    public AudioResource heavySwardResource;
+    public AudioClip woosh;
+    
 
     void Awake()
     {
-        _playerTransformChache = transform;
+
+
+        //------------------ Attack Animation ----------------------------------
+        
+        attachHitbox = GetComponentInParent<ValuesAssigner>().attackHitbox;
+
+        //Set the hitbox to inactive at the start of the game to prevent unintended collisions.
+        if (attachHitbox != null)
+            attachHitbox.SetActive(false);
     }
 
-    [ContextMenu("Fix Rotation")]
-    void FixRotation()
+
+    #region Attack Utils
+
+    ///<Summery>
+    /// These Methods will be called via the Y-Bot object through the animation events
+    ///        - When attacking set the necessary objects on active state including the script that we will make in future for dealing damage
+    ///        - This new scrip will also be applied to the hitbox game object
+    ///        - Ensure everything is disabled on EndAttack to prevent any conflicts
+    ///</Summery>
+    
+    public void PlayWoosh()
     {
-        float currentYRotation = transform.localEulerAngles.y;
-
-        float fixedRotation = Mathf.Round(currentYRotation / rotationFactor) * rotationFactor;
-
-        _playerTransformChache.localRotation = Quaternion.Euler(0f, fixedRotation, 0f);
-
-        Debug.Log($"Read: {currentYRotation}, Calculated Snap: {fixedRotation}");
+        SwardSource.clip = woosh;
+        SwardSource.Play();
     }
-
-    void TurnAroundStart()
+    public void PlayHeavySwardSound()
     {
-
+        SwardSource.resource = heavySwardResource;
+        SwardSource.Play();
     }
 
-
-    private void FixedUpdate()
+    public void InitiateAttack()
     {
-        Vector3 currentPosition = transform.position;
-        _playerTransformChache.position = new Vector3(xPlanePosition, currentPosition.y, currentPosition.z);
+        attachHitbox.SetActive(true);
     }
+
+    public void EndAttack()
+    {
+        attachHitbox?.SetActive(false);
+    }
+    #endregion
+
+    #region Defence Utils
+
+
+
+    #endregion
+
+    #region Audio Utils
+
+    public void PlayFootSteps()
+    {
+        audioSource.resource = footStepResource;
+        audioSource.Play();
+    }
+
+    #endregion
+
 }
 

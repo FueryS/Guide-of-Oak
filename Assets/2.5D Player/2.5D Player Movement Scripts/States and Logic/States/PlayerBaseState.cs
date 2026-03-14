@@ -7,4 +7,7 @@ public abstract class PlayerBaseState
     public abstract void UpdateState(PlayerStateManager player);
 
     public virtual void ExitState(PlayerStateManager player) { }
+
+
 }
+

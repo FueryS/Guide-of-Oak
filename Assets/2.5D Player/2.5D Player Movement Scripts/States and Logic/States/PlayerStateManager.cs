@@ -9,6 +9,8 @@ public class PlayerStateManager : MonoBehaviour
     [HideInInspector] public PlayerWalkingForwardState walkState = new PlayerWalkingForwardState();
     [HideInInspector] public PlayerJumpState jumpState = new PlayerJumpState();
     [HideInInspector] public PlayerDodgeState dodgeState = new PlayerDodgeState();
+    [HideInInspector] public PlayerAttackState attackState = new PlayerAttackState();
+    [HideInInspector] public PlayerParryState parryState = new PlayerParryState();
     #endregion
 
     #region refrences
@@ -46,4 +48,19 @@ public class PlayerStateManager : MonoBehaviour
         currentState.EnterState(this);
     }
 
+    #region Subscription
+    public void OnAttackPressed()
+    {
+        SwitchState(attackState);
+    }
+
+    public void OnJumpPressed()
+    {
+        SwitchState(jumpState);
+    }
+    public void OnDashPressed()
+    {
+        SwitchState(dodgeState);
+    }
+    #endregion
 }

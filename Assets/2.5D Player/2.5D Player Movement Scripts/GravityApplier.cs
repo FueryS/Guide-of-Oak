@@ -121,7 +121,7 @@ public class GravityApplier2D : MonoBehaviour
     {
         GroundCheck();
         ApplyGravity();
-        debuging();
+        //debuging();
     }
 
 }

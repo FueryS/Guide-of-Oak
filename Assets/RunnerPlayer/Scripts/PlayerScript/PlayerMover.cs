@@ -61,7 +61,7 @@ public class PlayerMover : MonoBehaviour
         canSlide = true;
 
         //Subscribe events
-        m_inputHandler.OnSlidePressed += PlayerSlide;
+        m_inputHandler.OnShiftPressed += PlayerSlide;
         m_inputHandler.OnJumpReleased += jumpReleased;
     }
 

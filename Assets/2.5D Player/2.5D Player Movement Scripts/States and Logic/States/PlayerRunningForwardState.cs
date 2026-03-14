@@ -27,7 +27,7 @@ public class PlayerRunningForwardState : PlayerBaseState
 
     public override void EnterState(PlayerStateManager player)
     {
-        Debug.Log("Player is entering running");
+        //Debug.Log("Player is entering running");
 
         inputHandler = player.inputHandler;
         playerRef = player;
@@ -39,6 +39,7 @@ public class PlayerRunningForwardState : PlayerBaseState
 
         player.inputHandler.OnJumpPressed += OnJumpPressed;
         player.inputHandler.OnDashPressed += OnDashPressed;
+        player.inputHandler.OnAttackPressed += OnAttackPressed;
     }
 
     public override void UpdateState(PlayerStateManager player)
@@ -99,7 +100,7 @@ public class PlayerRunningForwardState : PlayerBaseState
 
         switchRoutine = null;
 
-        if (_moveInput == Vector2.zero)
+        if (_moveInput == Vector2.zero || !player.inputHandler.sprintHeld)
         {
             player.SwitchState(state);
         }
@@ -116,8 +117,10 @@ public class PlayerRunningForwardState : PlayerBaseState
         player.animator.SetBool(run, false);
         playerRef.inputHandler.OnJumpPressed -= OnJumpPressed;
         playerRef.inputHandler.OnDashPressed -= OnDashPressed;
+        playerRef.inputHandler.OnAttackPressed -= OnAttackPressed;
     }
 
+    #region subscriptions
     void OnJumpPressed()
     {
         playerRef.SwitchState(playerRef.jumpState);
@@ -126,4 +129,9 @@ public class PlayerRunningForwardState : PlayerBaseState
     {
         playerRef.SwitchState(playerRef.dodgeState);
     }
+    void OnAttackPressed()
+    {
+        playerRef.SwitchState(playerRef.attackState);
+    }
+    #endregion
 }

@@ -10,7 +10,7 @@ public class PlayerIdleState : PlayerBaseState
     {
         playerRef = player;
 
-        Debug.Log("Player is Entering Idle");
+        //Debug.Log("Player is Entering Idle");
 
         inputHandler = player.inputHandler;
 
@@ -18,6 +18,8 @@ public class PlayerIdleState : PlayerBaseState
 
         player.inputHandler.OnJumpPressed += OnJumpPressed;
         player.inputHandler.OnDashPressed += OnDashPressed;
+        player.inputHandler.OnAttackPressed += OnAttackPressed;
+
     }
 
     public override void UpdateState(PlayerStateManager player)
@@ -38,7 +40,8 @@ public class PlayerIdleState : PlayerBaseState
         player.animator.SetBool(idle, false);
         player.inputHandler.OnJumpPressed -= OnJumpPressed;
         player.inputHandler.OnDashPressed -= OnDashPressed;
-        
+        player.inputHandler.OnAttackPressed -= OnAttackPressed;
+
     }
 
 
@@ -49,6 +52,10 @@ public class PlayerIdleState : PlayerBaseState
     void OnDashPressed()
     {
         playerRef.SwitchState(playerRef.dodgeState);
+    }
+    void OnAttackPressed()
+    {
+        playerRef.SwitchState(playerRef.attackState);
     }
 
 

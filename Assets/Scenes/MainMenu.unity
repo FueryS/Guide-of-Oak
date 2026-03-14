@@ -204,12 +204,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2021169953}
         m_TargetAssemblyTypeName: ButtonUtils, Assembly-CSharp
-        m_MethodName: ClosePannel
-        m_Mode: 1
+        m_MethodName: LoadLevel
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 5
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -334,7 +334,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 56749155}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1122708783}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &56749155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1174,7 +1186,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 835602593}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021169953}
+        m_TargetAssemblyTypeName: ButtonUtils, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &835602593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4450,6 +4474,10 @@ MonoBehaviour:
     sceneName: TrainingLevel
   - levelIndex: 5
     sceneName: FInalTestBasics
+  - levelIndex: 2
+    sceneName: Level2
+  - levelIndex: 3
+    sceneName: 2.5D development
 --- !u!1 &2038195304
 GameObject:
   m_ObjectHideFlags: 0
@@ -4532,7 +4560,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2038195307}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2021169953}
+        m_TargetAssemblyTypeName: ButtonUtils, Assembly-CSharp
+        m_MethodName: LoadLevel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2038195307
 MonoBehaviour:
   m_ObjectHideFlags: 0

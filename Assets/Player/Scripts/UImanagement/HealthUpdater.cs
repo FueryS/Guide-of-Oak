@@ -55,7 +55,6 @@ public class HealthUpdater : MonoBehaviour
     void Start()
     {
 
-
         GetMaxHP();
     }
 
@@ -67,6 +66,7 @@ public class HealthUpdater : MonoBehaviour
     void GetMaxHP()
     {
         _maxHP = m_stats.GetHp();
+        m_health.maxValue = _maxHP;
     }
 
     void ShowCurrentHP()

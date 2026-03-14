@@ -2,6 +2,8 @@ using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
+
+//Plays audio from the AudioManager when the player is walking or running, checks if the player is grounded before playing the audio
 public class AudioPackPlayer : MonoBehaviour
 {
     AudioManager _AM;

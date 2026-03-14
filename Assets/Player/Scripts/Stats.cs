@@ -20,7 +20,7 @@ public class Stats : MonoBehaviour
     {
         if (HP < 1)
         {
-            Debug.LogWarning("Value of HP is 0 or less nigga");
+            Debug.LogWarning("Value of HP is 0 or less");
         }
 
         _health = HP;
@@ -67,6 +67,20 @@ public class Stats : MonoBehaviour
         if (_health < 1) DeathEvent();
         StartCoroutine("Iframe");
     }
+    
+    public void ForceCourineStart()
+    {
+        StartCoroutine("Iframe");
+    }
+
+    public void ForceIframeStart()
+    {
+        _iframe = true;
+    }
+    public void ForceIframeEnd()
+    {
+        _iframe = false;
+    }
 
     IEnumerator Iframe()
     {
@@ -81,21 +95,12 @@ public class Stats : MonoBehaviour
         if (_health < 1 ) DeathEvent(); ;
     }
 
-    public void Heal(float heal)
-    {
-        this._health += heal;
-        clampHealth();
-    }
     private void _Heal()
     {
         this._health += 10;
         clampHealth();
     }
 
-    public void OverHeal(float heal) 
-    {
-        this._health += heal;
-    }
     public void clampHealth()
     {
         this._health = Mathf.Clamp(_health, 0f, HP);
@@ -107,14 +112,14 @@ public class Stats : MonoBehaviour
         DeathEvent();
     }
 
-    public void SetHP(float hp)
-    {
-        this.HP = hp;
-    }
+    //public void SetHP(float hp)
+    //{
+    //    this.HP = hp;s
+    //}
 
     public float GetHp()
     {
-        return this._health;
+        return this.HP;
     }
     public float GetHealth()
     {

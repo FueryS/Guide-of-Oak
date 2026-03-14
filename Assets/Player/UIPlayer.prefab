@@ -364,9 +364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24fba291558910542b0d3e0c705ea645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthUpdater
-  m_stats: {fileID: 0}
   m_health: {fileID: 2127614665126307324}
   m_lerp: {fileID: 5071216116254405479}
+  m_stats: {fileID: 0}
+  targetName: Player
+  targetTag: Player
   lerpSpeed: 0.0004
 --- !u!1 &7760271915477069255
 GameObject:
@@ -442,7 +444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -452,7 +454,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &4081497491322493931
 MonoBehaviour:
   m_ObjectHideFlags: 0

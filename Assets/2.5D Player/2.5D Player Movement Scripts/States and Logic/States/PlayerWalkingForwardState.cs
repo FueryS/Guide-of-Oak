@@ -9,12 +9,13 @@ public class PlayerWalkingForwardState : PlayerBaseState
 
     public override void EnterState(PlayerStateManager player)
     {
-        Debug.Log("Player is entering walking");
+        //Debug.Log("Player is entering walking");
         player.animator.SetTrigger(walk);
         playerRef = player;
 
         player.inputHandler.OnJumpPressed += OnJumpPressed;
         player.inputHandler.OnDashPressed += OnDashPressed;
+        player.inputHandler.OnAttackPressed += OnAttackPressed;
     }
 
     public override void UpdateState(PlayerStateManager player)
@@ -39,6 +40,7 @@ public class PlayerWalkingForwardState : PlayerBaseState
     {
         playerRef.inputHandler.OnJumpPressed -= OnJumpPressed;
         playerRef.inputHandler.OnDashPressed -= OnDashPressed;
+        playerRef.inputHandler.OnAttackPressed -= OnAttackPressed;
     }
 
 
@@ -49,6 +51,10 @@ public class PlayerWalkingForwardState : PlayerBaseState
     void OnDashPressed()
     {
         playerRef.SwitchState(playerRef.dodgeState);
+    }
+    void OnAttackPressed()
+    {
+        playerRef.SwitchState(playerRef.attackState);
     }
 
 

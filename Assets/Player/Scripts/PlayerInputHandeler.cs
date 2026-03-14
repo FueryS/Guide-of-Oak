@@ -25,7 +25,10 @@ public class PlayerInputHandler : MonoBehaviour
     public event Action OnJumpReleased;
     public event Action OnDashPressed;
     public event Action OnDashReleased;
-    public event Action OnSlidePressed;
+    public event Action OnShiftPressed;
+    public event Action OnAttackPressed;
+    public event Action OnAttackReleased;
+    public event Action OnInteractPressed;
 
     private void Awake()
     {
@@ -46,7 +49,7 @@ public class PlayerInputHandler : MonoBehaviour
         controls.Player.Sprint.canceled += ctx => sprintHeld = false;
 
         //Slide event
-        controls.Player.Sprint.started += ctx=> OnSlidePressed?.Invoke();
+        controls.Player.Sprint.started += ctx=> OnShiftPressed?.Invoke();
 
         // JumpPressed Events
         controls.Player.Jump.started += ctx => OnJumpPressed?.Invoke();
@@ -67,6 +70,13 @@ public class PlayerInputHandler : MonoBehaviour
         controls.Player.Jump.canceled += ctx => spaceHeld = false;
         /* "Space" must be defined in your InputActions asset under Player map.
            This allows you to hold space to fly the camera upward. */
+
+        // Attack Events
+        controls.Player.Attack.performed += ctx => OnAttackPressed?.Invoke();
+        controls.Player.Attack.canceled += ctx => OnAttackReleased?.Invoke();
+
+        //Interaction
+        controls.Player.Interact.started += ctx => OnInteractPressed?.Invoke();
 
     }
 
